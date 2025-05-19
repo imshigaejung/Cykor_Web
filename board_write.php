@@ -7,15 +7,12 @@
     </head>
     <body>
         <div>
-            <form action="board_read.php" method="post">
-                <label for="title">제목 </label> 
-                <input type="text" id="title" name="title" width="500"><br/>
+            <form action="process_write.php" method="post">
+                <input type="text" id="title" name="title" placeholder="제목" style="width:450px"><br/><br/>
 
-                <label for="body">본문</label><br/>
-                <textarea id="body" name="body" style="height:300px; width:500px; font-size:20px;"></textarea><br/>
+                <textarea id="body" name="body" placeholder="본문"style="height:300px; width:500px; font-size:15px;"></textarea><br/>
                 
                 <input type="submit" value="확인">
             </form>
-            <?php
-            ?>
         </div>
+    </body>
