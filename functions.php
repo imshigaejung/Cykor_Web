@@ -7,13 +7,14 @@
 
         if(!mysqli_stmt_execute($sql)){
             $_SESSION['error'] = mysqli_error($database);
+            //이전 페이지로 복귀
             header("Location: " . $_SERVER['HTTP_REFERER']);
             exit;
 
         }
 
-        $reuslt = mysqli_stmt_get_result($sql);
-        return $reuslt;
+        $result = mysqli_stmt_get_result($sql);
+        return $result;
     }
 
 ?>

@@ -15,7 +15,7 @@
             } 
         
         ?>   
-        <form action="process_login.php" method="post">
+        <form action="process_signup.php" method="post">
             <div>
                 <label for="id">아이디&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" id="id" name="id"><br/>

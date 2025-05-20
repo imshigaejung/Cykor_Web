@@ -17,22 +17,23 @@
 
     $verify = get_userinfo($database);
 
-    if(!empty($verify)){
-        $_SESSION['error'] = "사용할 수 없는 아이디입니다. 다른 아이디를 입력해 주세요." 
+    if(mysqli_num_rows($verify) > 0){
+        $_SESSION['error'] = "사용할 수 없는 아이디입니다. 다른 아이디를 입력해 주세요."; 
         header("Location: board_signup.php");
         exit;    
     }
-    
-    $sql = "
-        INSERT INTO userinfo(
-            username,
-            userpw
-        ) VALUES(
-            '{$_POST['id']}',
-            '{$_POST['pw']}'
-        )";
-    $result = mysqli_query($database,$sql);
-    if($result == false){
-        echo mysqli_error($database);
+    else{
+        $sql = mysqli_prepare($database,"INSERT INTO userinfo(username, userpw) VALUES(?, ?)");
+        $hashed_pw = password_hash($_POST['pw'],PASSWORD_BCRYPT);
+        mysqli_stmt_bind_param($sql,"ss",$_POST['id'],$hashed_pw);
+        if(!mysqli_stmt_execute($sql)){
+            $_SESSION['error'] = mysqli_error($database);
+            //이전 페이지로 복귀
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit;
+
+        }
+        header("Location: board_login.php");
+        exit;    
     }
 ?>

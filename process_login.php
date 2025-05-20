@@ -27,10 +27,10 @@
     else{
         //로그인 성공
         $row = mysqli_fetch_array($result);
-        if($_POST['pw'] == $row['userpw']){
+        if(password_verify($_POST['pw'], $row['userpw'])){
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['username'];
-            header("Location: board_write.php");
+            header("Location: board_read.php");
             exit;
         }
         //로그인 실패 - 비밀번호를 조회하지 못 한 경우
