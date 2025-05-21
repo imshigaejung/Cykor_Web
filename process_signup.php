@@ -31,7 +31,6 @@
             //이전 페이지로 복귀
             header("Location: " . $_SERVER['HTTP_REFERER']);
             exit;
-
         }
         header("Location: board_login.php");
         exit;    
