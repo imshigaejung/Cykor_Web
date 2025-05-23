@@ -10,7 +10,7 @@
             <form action="process_write.php" method="post">
                 <input type="text" id="title" name="title" placeholder="제목" style="width:450px"><br/><br/>
 
-                <textarea id="body" name="body" placeholder="본문"style="height:300px; width:500px; font-size:15px;"></textarea><br/>
+                <textarea id="body" name="body" placeholder="본문"style="height:300px; width:500px; font-size:15px; resize:none;"></textarea><br/>
                 
                 <input type="submit" value="확인">
             </form>

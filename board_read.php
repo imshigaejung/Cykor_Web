@@ -7,12 +7,20 @@
     <body>
         <?php
         session_start();
-        include "process_read.php";
+        require "process_read.php";
         echo "<h2>".$title."</h2>";
-        echo $body.'<br/>';
         if($user_id == $_SESSION['user_id']){
-            echo "<a href='process_edit.php' class='button'>write</a><br/>";  
+            $i = 0;
+            while($i >10){
+                echo "&nbsp";
+                $i += 1;
+            }
+            echo "<h3><a href='board_edit.php?id=".$_GET['id']."' class='button'>edit</a><br/><h3>";
+            echo "&nbsp&nbsp";
+            echo "<h3><a href='process_delete.php?id=".$_GET['id']."' class='button'>delete</a><br/><h3>";
         }
+        echo $body.'<br/><br/>';
+        
         ?>
         <a href="board_main.php" class="button">return</a>  
     </body>
