@@ -15,9 +15,7 @@
                 echo "&nbsp";
                 $i += 1;
             }
-            echo "<h3><a href='board_edit.php?id=".$_GET['id']."' class='button'>edit</a><br/><h3>";
-            echo "&nbsp&nbsp";
-            echo "<h3><a href='process_delete.php?id=".$_GET['id']."' class='button'>delete</a><br/><h3>";
+            echo "<h3><a href='board_edit.php?id=".$_GET['id']."' class='button' style='margin-right:10px;'>edit</a><a href='process_delete.php?id=".$_GET['id']."' class='button'>delete</a></h3><br/>";
         }
         echo $body.'<br/><br/>';
         
