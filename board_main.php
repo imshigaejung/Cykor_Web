@@ -7,10 +7,15 @@
     <body>
         <h2>board</h2>
         <div>
+            <?php
+            session_start();
+            require "functions.php";
+            is_login();
+            echo "welcome, ".$_SESSION['user_name']."<br/>";
+            ?>
             <a href="board_write.php" class="button">write</a>
             <ul>
                 <?php
-                    session_start();
                     require_once "db.php";
                     $sql = mysqli_prepare($database,"SELECT * FROM board");
                     if(!mysqli_stmt_execute($sql)){
@@ -25,5 +30,6 @@
                     }
                 ?>
             </ul>
+            <a href='process_logout.php' class="button">logout</a>
         </div>
     </body>

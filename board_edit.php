@@ -9,6 +9,8 @@
         <div>
             <?php
                 session_start();
+                require "functions.php";
+                is_login();
                 if (isset($_SESSION['error'])) {
                     echo "<p>" . $_SESSION['error'] . "</p>";
                     unset($_SESSION['error']);

@@ -17,5 +17,12 @@
         return $result;
     }
 
+    function is_login(){
+        if(!isset($_SESSION['user_id'])){
+        header("Location: board_login.php");
+        exit;
+    }
+    }
+
 ?>
 

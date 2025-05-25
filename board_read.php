@@ -8,6 +8,8 @@
         <?php
         session_start();
         require "process_read.php";
+        require "functions.php";
+        is_login();
         echo "<h2>".$title."</h2>";
         if($user_id == $_SESSION['user_id']){
             $i = 0;
