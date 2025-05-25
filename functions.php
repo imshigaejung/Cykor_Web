@@ -19,6 +19,7 @@
 
     function is_login(){
         if(!isset($_SESSION['user_id'])){
+        $_SESSION['error'] = "로그인을 먼저 진행해주세요.";
         header("Location: board_login.php");
         exit;
     }
