@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS userinfo(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO userinfo(username, userpw)
-VALUES ('root','sudo')
+VALUES ('root','$2y$10$D8MlVDgAVitktA0TXHVyAuZGUyeMX4pj6niXYBrrb45qmq9tngafa')
